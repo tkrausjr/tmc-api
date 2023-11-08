@@ -1,0 +1,87 @@
+{
+  "fullName": {
+    "orgId": "b00b7417-7997-48e7-a763-ac3c8d04d323",
+    "managementClusterName": "sc-802-vds",
+    "provisionerName": "tanzu-dev01",
+    "name": "test-tmc-ui"
+  },
+  "meta": {},
+  "spec": {
+    "clusterGroupName": "sort-edge-clusters",
+    "tmcManaged": true,
+    "topology": {
+      "version": "v1.26.5+vmware.2-fips.1-tkg.1",
+      "clusterClass": "tanzukubernetescluster",
+      "controlPlane": {
+        "replicas": 1,
+        "metadata": {},
+        "osImage": {
+          "name": "ubuntu",
+          "version": "20.04",
+          "arch": "amd64"
+        }
+      },
+      "nodePools": [
+        {
+          "spec": {
+            "class": "node-pool",
+            "replicas": 1,
+            "overrides": [
+              {
+                "name": "storageClass",
+                "value": "nfs-datastores"
+              }
+            ],
+            "metadata": {},
+            "osImage": {
+              "name": "ubuntu",
+              "version": "20.04",
+              "arch": "amd64"
+            }
+          },
+          "info": {
+            "name": "md-0"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "name": "defaultStorageClass",
+          "value": "nfs-datastores"
+        },
+        {
+          "name": "defaultVolumeSnapshotClass",
+          "value": "volumesnapshotclass-delete"
+        },
+        {
+          "name": "vmClass",
+          "value": "best-effort-small"
+        },
+        {
+          "name": "storageClass",
+          "value": "nfs-datastores"
+        },
+        {
+          "name": "controlPlaneCertificateRotation",
+          "value": {
+            "activate": false,
+            "daysBefore": 90
+          }
+        }
+      ],
+      "network": {
+        "pods": {
+          "cidrBlocks": [
+            "172.20.0.0/16"
+          ]
+        },
+        "services": {
+          "cidrBlocks": [
+            "10.96.0.0/16"
+          ]
+        },
+        "serviceDomain": "cluster.local"
+      }
+    }
+  }
+}
