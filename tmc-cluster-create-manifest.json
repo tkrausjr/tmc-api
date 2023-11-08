@@ -25,7 +25,7 @@
         {
           "spec": {
             "class": "node-pool",
-            "replicas": 1,
+            "replicas": 2,
             "overrides": [
               {
                 "name": "storageClass",
