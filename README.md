@@ -60,7 +60,7 @@
     
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-      				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+
    	* Response:
    		* SUCCESS CODE: 200
 		* BODY_TYPE:  application/json
@@ -76,7 +76,7 @@
 		* URL: https://{{baseUrl}}/v1alpha1/clustergroups?searchScope.name=*
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-      				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+
    	* Response:
    		* SUCCESS CODE: 200
 		* BODY_TYPE:  application/json
@@ -92,7 +92,6 @@
 		* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
       			* "Content-Type:  application/json"
       		* BODY:
 ```javascript
@@ -126,7 +125,6 @@
 		* URL: https://{{baseUrl}}/v1alpha1/managementclusters/{{managementClusterName}}/provisioners/{{provisionerName}}/tanzukubernetesclusters  
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
       			* "Content-Type:  application/json"
       		* BODY:
 ```javascript
