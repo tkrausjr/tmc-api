@@ -31,13 +31,13 @@
 ## 4 - Run "Get Access Token" POST in Login Folder
 * API Reference
 	* Request
- 		* VERB: POST
+ 		* VERB: Post
 		* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
-       		* Headers:
-			* Content-Type:  application/x-www-form-urlencoded
+  		* HEADERS:
+    			* Content-Type:  application/x-www-form-urlencoded
    	* Response
-   		* Success Code: 200
-   	    	* Body:
+   		* SUCCESS CODE: 200
+   	    	* BODY:
    	     		* "id_token": "eyJhbGciOiJSUz........."
    	      		* NOTE: This is the Bearer Token needed for all subsequent REST calls.
 
