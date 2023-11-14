@@ -92,7 +92,7 @@
 	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
 	* HEADERS(Required):
  		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-   		* "Content-Type:  application/json"
+   		* "Content-Type":  "application/json"
 	* BODY:
 ```javascript
 {
@@ -125,7 +125,7 @@
 	* URL: https://{{baseUrl}}/v1alpha1/managementclusters/{{managementClusterName}}/provisioners/{{provisionerName}}/tanzukubernetesclusters  
 	* HEADERS(Required):
 		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-		* "Content-Type:  application/json"
+		* "Content-Type":  "application/json"
 	* BODY:
 
 ```javascript
@@ -225,4 +225,26 @@
 * Response:
 	* SUCCESS CODE: 200
 	* BODY_TYPE:  application/json
-	* BODY:   
+	* BODY:
+
+## 9 - (Work in Progress) Run "Get Kubeconfig for Cluster"  in Clusters folder
+* NOTE: Need to provide PEM Cert so the API response can be encrypted for security purposes.
+* Request:
+	* VERB: Get
+	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/adminkubeconfig?fullName.managementClusterName=sc-802-vds&fullName.provisionerName=tanzu-dev01&encryptionKey.PublicKeyPem=LS0tLS1CRUdJTiBSU0EgUFVCT.......tFWS0tLS0tCg==&encryptionKey.timestamp=2023-11-09T20:00:00.0Z
+ 		* NOTE: Where encryptionKey.PublicKeyPem was created with
+	 	* openssl genrsa -out private-key.pem 3072; openssl rsa -in private-key.pem -RSAPublicKey_out -out public-key.pem
+	 	* Then need to base64 encode.
+	 	* cat ./openssl-pubic-key.pem |base64 -w 0 LS0tLS1CRUdJTiBSU0EgUFVCT.......tFWS0tLS0tCg== 
+	* HEADERS(Required):
+		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+  		* "Content-Type":  "application/json"
+* Response:
+	* SUCCESS CODE: 200
+	* BODY_TYPE:  application/json
+	* BODY:
+```javascript
+{
+    "kubeconfig": "wcDMA67Gf+Gr1AjBAQwAveePqC3HeeGJTtT9f2DfseHEgJOL91S7coY/ZcocwhXP8DDDZlzl8CfU4f2Vfg.......3PXEttBW17/+2OOhLjT0ikSipXb4bP0p4I7iY7pJruCc4EDghuQRYvdofyBcmNzswc2Vmsfn4pHxMAvhZh0A"
+}
+```
