@@ -1,11 +1,14 @@
-{
-  "fullName": {
+{ "tanzuKubernetesCluster":
+  {"fullName": {
     "orgId": "b00b7417-7997-48e7-a763-ac3c8d04d323",
     "managementClusterName": "sc-802-vds",
     "provisionerName": "tanzu-dev01",
-    "name": "test-tmc-api"
+    "name": "test-tmc-api-w-labels"
   },
-  "meta": {},
+  "meta": {
+   "labels": {
+        "owner": "tkraus"
+        } },
   "spec": {
     "clusterGroupName": "sort-edge-clusters",
     "tmcManaged": true,
@@ -25,7 +28,7 @@
         {
           "spec": {
             "class": "node-pool",
-            "replicas": 2,
+            "replicas": 1,
             "overrides": [
               {
                 "name": "storageClass",
@@ -40,7 +43,7 @@
             }
           },
           "info": {
-            "name": "md-0"
+            "name": "api-md-0"
           }
         }
       ],
@@ -81,7 +84,9 @@
           ]
         },
         "serviceDomain": "cluster.local"
+        }
       }
     }
   }
 }
+
