@@ -34,7 +34,7 @@
  		* VERB: Post
 		* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
   		* HEADERS:
-			* Content-Type:  application/x-www-form-urlencoded
+		1- Content-Type:  application/x-www-form-urlencoded
    	* Response:
    		* SUCCESS CODE: 200
    	    	* BODY:
@@ -59,7 +59,7 @@
 				* Returns all Clusters under a given Management Cluster.
     
   		* HEADERS(Required):
-    			* \"Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN>"
+    		1- "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN>"
 
    	* Response:
    		* SUCCESS CODE: 200
