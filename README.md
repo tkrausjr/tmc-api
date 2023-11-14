@@ -45,7 +45,7 @@
 
 
 ## 5 - Run "Get Cluster List"  in Clusters Folder
-* API Reference
+
 * Request:
 	* VERB: Get
 	* URL: (below shows different searchScopes to filter)
@@ -86,14 +86,14 @@
 		* }
 
 ## 7 - Run "Attach Existing Namespace"  in Workspaces-Namespaces folder
-* API Reference
-	* Request:
- 		* VERB: Post
-		* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
-  		* HEADERS(Required):
-    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-      			* "Content-Type:  application/json"
-      		* BODY:
+
+* Request:
+	* VERB: Post
+	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
+	* HEADERS(Required):
+		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+		* "Content-Type:  application/json"
+	* BODY:
 ```javascript
 {
     "namespace": {
@@ -112,21 +112,22 @@
   }
 ```
 
-   	* Response:
-		* SUCCESS CODE: 200
-		* BODY_TYPE:  application/json
-		* BODY:   
+* Response:
+	* SUCCESS CODE: 200
+	* BODY_TYPE:  application/json
+	* BODY:   
 			
 
 ## 8 - Run "Create Cluster"  in Create Cluster folder
-* API Reference
-	* Request:
- 		* VERB: Post
-		* URL: https://{{baseUrl}}/v1alpha1/managementclusters/{{managementClusterName}}/provisioners/{{provisionerName}}/tanzukubernetesclusters  
-  		* HEADERS(Required):
-    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-      			* "Content-Type:  application/json"
-      		* BODY:
+
+* Request:
+	* VERB: Post
+	* URL: https://{{baseUrl}}/v1alpha1/managementclusters/{{managementClusterName}}/provisioners/{{provisionerName}}/tanzukubernetesclusters  
+	* HEADERS(Required):
+		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+		* "Content-Type:  application/json"
+	* BODY:
+
 ```javascript
 { "tanzuKubernetesCluster":
   {"fullName": {
@@ -221,7 +222,7 @@
 }
 ```
 
-   	* Response:
-		* SUCCESS CODE: 200
-		* BODY_TYPE:  application/json
-		* BODY:   
+* Response:
+	* SUCCESS CODE: 200
+	* BODY_TYPE:  application/json
+	* BODY:   
