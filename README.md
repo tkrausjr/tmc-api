@@ -22,7 +22,7 @@
 
 
 ## 3 - Configure Postman Variables
-- [ ] baseUrl = <orgname>.tmc.cloud.vmware.com (Obtained from URL field when you loginto TMC)
+- [ ] baseUrl = \<orgname\>.tmc.cloud.vmware.com (Obtained from URL field when you loginto TMC)
 - [ ] refreshToken = API Token generated above
 - [ ] provisionerName = vSphere Namespace Name 
 - [ ] managementClusterName = Name of SC Management Cluster you added in TMC --> Administration
