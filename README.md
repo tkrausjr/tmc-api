@@ -41,8 +41,6 @@
 		* NOTE: This is the Bearer Token needed for all subsequent REST calls.
 
 
-
-
 ## 5 - Run "Get Cluster List"  in Clusters Folder
 
 * REQUEST:
@@ -232,9 +230,10 @@
 	* VERB: Get
 	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/adminkubeconfig?fullName.managementClusterName=sc-802-vds&fullName.provisionerName=tanzu-dev01&encryptionKey.PublicKeyPem=LS0tLS1CRUdJTiBSU0EgUFVCT.......tFWS0tLS0tCg==&encryptionKey.timestamp=2023-11-09T20:00:00.0Z
  		* NOTE: Where encryptionKey.PublicKeyPem was created with
-	 	* openssl genrsa -out private-key.pem 3072; openssl rsa -in private-key.pem -RSAPublicKey_out -out public-key.pem
-	 	* Then need to base64 encode.
-	 	* cat ./openssl-pubic-key.pem |base64 -w 0 LS0tLS1CRUdJTiBSU0EgUFVCT.......tFWS0tLS0tCg== 
+		 	* openssl genrsa -out private-key.pem 3072; openssl rsa -in private-key.pem -RSAPublicKey_out -out public-key.pem
+		 	* Then need to base64 encode.
+		 	* cat ./openssl-pubic-key.pem |base64 -w 0 LS0tLS1CRUdJTiBSU0EgUFVCT.......tFWS0tLS0tCg==
+    		* NOTE: Where encryptionKey.timestamp= MUST be in format encryptionKey.timestamp=2023-11-09T20:00:00.0Z 
 	* HEADERS(Required):
 		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
   		* "Content-Type":  "application/json"
