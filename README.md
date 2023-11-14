@@ -248,3 +248,22 @@
     "kubeconfig": "wcDMA67Gf+Gr1AjBAQwAveePqC3HeeGJTtT9f2DfseHEgJOL91S7coY/ZcocwhXP8DDDZlzl8CfU4f2Vfg.......3PXEttBW17/+2OOhLjT0ikSipXb4bP0p4I7iY7pJruCc4EDghuQRYvdofyBcmNzswc2Vmsfn4pHxMAvhZh0A"
 }
 ```
+* Copy the value returned in the "kubeconfig" key so you can BASE64 Decode the PGP encrypted Response.
+* echo "wcDMA67Gf+Gr1AjBAQ.......yBcmNzswc2Vmsfn4pHxMAvhZh0A" | base64 -d
+```javascript
+        珨-yN`߱ĀTr?e0f\'~N	_.v*^XMe^J
+                                                                                     b/v56A
+TTSc# ѱBO"hY"b                                                                u@wH\yg)ϴ7/	yg^@qbc\2o_ĕ?04U֛]\!iz
+){ɀ#YcKu<u{>Mn'N@{'d7>@࢜](L
+                                                        q!gMOX#?GzE:ߧbAN\F+	k>ťl6u4
+                                                                                                                  㥳Y2KGM}~
+Di&j"$fGST|״&2V!F6
+    e
+j;beTnJT#.ԔAmt\O
+      ;ܖ2'F\HR!skW=VvVWбQ^.5#Xƈ.]uA]	G^Y%NKrKxuNZuɪwDB®-.c"vjMN[}>2.>eeNi?I9Eގr$Lu}3Az6 OOc+2,P<)Ei J$:'mJ<M^윦j΍ږƛݷk$	$̫P4g
+                                                  {g=I
+'Vl
+.MWen{^$hG7J/"Z8œM
+                             9x*uOm	I Zf4`NKƣdSXĶdd>AZyO
+```
+
