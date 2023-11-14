@@ -59,7 +59,7 @@
 				* Returns all Clusters under a given Management Cluster.
     
   		* HEADERS(Required):
-    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+    			* \"Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN>"
 
    	* Response:
    		* SUCCESS CODE: 200
