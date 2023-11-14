@@ -91,8 +91,8 @@
 	* VERB: Post
 	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
 	* HEADERS(Required):
-		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
-		* "Content-Type:  application/json"
+ 		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+   		* "Content-Type:  application/json"
 	* BODY:
 ```javascript
 {
