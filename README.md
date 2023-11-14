@@ -74,7 +74,6 @@
 	* Request:
  		* VERB: Get
 		* URL: https://{{baseUrl}}/v1alpha1/clustergroups?searchScope.name=*
-    
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
 				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
@@ -91,10 +90,10 @@
 	* Request:
  		* VERB: Post
 		* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
-    
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
 				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+      			* "Content-Type:  application/json"
       		* BODY:
 ```javascript
 {
@@ -120,4 +119,111 @@
 		* BODY:   
 			
 
-## 8 - Run
+## 8 - Run "Create Cluster"  in Create Cluster folder
+* API Reference
+	* Request:
+ 		* VERB: Post
+		* URL: https://{{baseUrl}}/v1alpha1/managementclusters/{{managementClusterName}}/provisioners/{{provisionerName}}/tanzukubernetesclusters  
+  		* HEADERS(Required):
+    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+      			* "Content-Type:  application/json"
+      		* BODY:
+```javascript
+{ "tanzuKubernetesCluster":
+  {"fullName": {
+    "orgId": "b00b7417-7997-48e7-a763-ac3c8d04d323",
+    "managementClusterName": "sc-802-vds",
+    "provisionerName": "tanzu-dev01",
+    "name": "test-tmc-api-w-labels"
+  },
+  "meta": {
+   "labels": {
+        "owner": "tkraus"
+        } },
+  "spec": {
+    "clusterGroupName": "sort-edge-clusters",
+    "tmcManaged": true,
+    "topology": {
+      "version": "v1.26.5+vmware.2-fips.1-tkg.1",
+      "clusterClass": "tanzukubernetescluster",
+      "controlPlane": {
+        "replicas": 1,
+        "metadata": {},
+        "osImage": {
+          "name": "ubuntu",
+          "version": "20.04",
+          "arch": "amd64"
+        }
+      },
+      "nodePools": [
+        {
+          "spec": {
+            "class": "node-pool",
+            "replicas": 1,
+            "overrides": [
+              {
+                "name": "storageClass",
+                "value": "nfs-datastores"
+              }
+            ],
+            "metadata": {},
+            "osImage": {
+              "name": "ubuntu",
+              "version": "20.04",
+              "arch": "amd64"
+            }
+          },
+          "info": {
+            "name": "api-md-0"
+          }
+        }
+      ],
+      "variables": [
+        {
+          "name": "defaultStorageClass",
+          "value": "nfs-datastores"
+        },
+        {
+          "name": "defaultVolumeSnapshotClass",
+          "value": "volumesnapshotclass-delete"
+        },
+        {
+          "name": "vmClass",
+          "value": "best-effort-small"
+        },
+        {
+          "name": "storageClass",
+          "value": "nfs-datastores"
+        },
+        {
+          "name": "controlPlaneCertificateRotation",
+          "value": {
+            "activate": false,
+            "daysBefore": 90
+          }
+        }
+      ],
+      "network": {
+        "pods": {
+          "cidrBlocks": [
+            "172.20.0.0/16"
+          ]
+        },
+        "services": {
+          "cidrBlocks": [
+            "10.96.0.0/16"
+          ]
+        },
+        "serviceDomain": "cluster.local"
+        }
+      }
+    }
+  }
+}
+```
+
+   	* Response:
+		* SUCCESS CODE: 200
+		* BODY_TYPE:  application/json
+		* BODY:   
