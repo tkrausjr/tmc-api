@@ -248,8 +248,10 @@
     "kubeconfig": "wcDMA67Gf+Gr1AjBAQwAveePqC3HeeGJTtT9f2DfseHEgJOL91S7coY/ZcocwhXP8DDDZlzl8CfU4f2Vfg.......3PXEttBW17/+2OOhLjT0ikSipXb4bP0p4I7iY7pJruCc4EDghuQRYvdofyBcmNzswc2Vmsfn4pHxMAvhZh0A"
 }
 ```
-* Copy the value returned in the "kubeconfig" key so you can BASE64 Decode the PGP encrypted Response.
-* echo "wcDMA67Gf+Gr1AjBAQ.......yBcmNzswc2Vmsfn4pHxMAvhZh0A" | base64 -d
+The response above is first encrypted using the PEM key you supplied in the Request and then the encrypted data is Base64 encoded.
+
+1- Copy the value of the "kubeconfig" key so you can BASE64 Decode the PGP encrypted Response.
+2- echo "wcDMA67Gf+Gr1AjBAQ.......yBcmNzswc2Vmsfn4pHxMAvhZh0A" | base64 -d
 ```javascript
         珨-yN`߱ĀTr?e0f\'~N	_.v*^XMe^J
                                                                                      b/v56A
@@ -266,4 +268,4 @@ j;beTnJT#.ԔAmt\O
 .MWen{^$hG7J/"Z8œM
                              9x*uOm	I Zf4`NKƣdSXĶdd>AZyO
 ```
-
+Now to get the kubeconfig, we have to decrypt but this has been tough because we didnt encrypt it wiht PGP, we used openssl and I cant seem to import and openssl RSA Private or Public Key into PGP to be able to decrypt it.
