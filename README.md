@@ -1,6 +1,5 @@
-# Sample Readme to record basic workflow for TMC API Automation
-#
-#
+# API Reference for some basic TMC API CRUD Operations 
+
 
 ## 1 - TMC API Reference
 - Automation of TMC activitites via REST API
