@@ -28,12 +28,12 @@
 * managementClusterName = Name of SC Management Cluster you added in TMC --> Administration
       
 
-## 4 - Run "Get Access Token" POST in Login Folder
+## 4 - Run "Get Access Token"  in Login Folder
 * API Reference
 	* Request
  		* VERB: Post
 		* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
-  		* HEADERS:
+  		* HEADERS(Required):
     			* Content-Type:  application/x-www-form-urlencoded
    	* Response
    		* SUCCESS CODE: 200
@@ -44,7 +44,31 @@
 
 
 
-## 5 - Run
+## 5 - Run "Get Cluster List"  in Clusters Folder
+* API Reference
+	* Request
+ 		* VERB: Get
+		* URL: (below shows different searchScopes to filter)
+  			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=*
+				* Returns all clusters in the ORG you have permissions for.  
+			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=<cluster-name>
+				* Returns just clusters that match that name
+			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.provisionerName=spvn
+				* Returns just clusters that are part of the specified provisioner (TKGs Namespace)
+			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.managementClusterName=tpmlab-host66-sc
+				* Returns all Clusters under a given Management Cluster.
+    
+  		* HEADERS(Required):
+    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+   	* Response
+   		* SUCCESS CODE: 200
+		* BODY_TYPE:  application/json
+		* BODY:   
+			* { "clusters":
+				* [...]
+			* }
+   	          
 ## 6 - Run
 ## 7 - Run
 ## 8 - Run
