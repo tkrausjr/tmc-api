@@ -30,12 +30,12 @@
 
 ## 4 - Run "Get Access Token"  in Login Folder
 * API Reference
-	* Request
+	* Request:
  		* VERB: Post
 		* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
   		* HEADERS(Required):
     			* Content-Type:  application/x-www-form-urlencoded
-   	* Response
+   	* Response:
    		* SUCCESS CODE: 200
    	    	* BODY:
    	     		* "id_token": "eyJhbGciOiJSUz........."
@@ -46,7 +46,7 @@
 
 ## 5 - Run "Get Cluster List"  in Clusters Folder
 * API Reference
-	* Request
+	* Request:
  		* VERB: Get
 		* URL: (below shows different searchScopes to filter)
   			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=*
@@ -61,7 +61,7 @@
   		* HEADERS(Required):
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
 				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
-   	* Response
+   	* Response:
    		* SUCCESS CODE: 200
 		* BODY_TYPE:  application/json
 		* BODY:   
@@ -69,6 +69,53 @@
 				* [...]
 			* }
    	          
-## 6 - Run
-## 7 - Run
+## 6 - Run "List Cluster Groups"  in Cluster Groups folder
+* API Reference
+	* Request:
+ 		* VERB: Get
+		* URL: https://{{baseUrl}}/v1alpha1/clustergroups?searchScope.name=*
+    
+  		* HEADERS(Required):
+    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+   	* Response:
+   		* SUCCESS CODE: 200
+		* BODY_TYPE:  application/json
+		* BODY:   
+			* { "clusterGroups":
+				* [...]
+			* }
+
+## 7 - Run "Attach Existing Namespace"  in Workspaces-Namespaces folder
+* API Reference
+	* Request:
+ 		* VERB: Post
+		* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
+    
+  		* HEADERS(Required):
+    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
+      		* BODY: ``` javascript
+          {
+    "namespace": {
+      "fullName": {
+        "managementClusterName": "sc-802-vds",
+        "provisionerName": "tanzu-dev01",
+        "clusterName": "shared-01",
+        "name": "local-kubectl-test-tmc-3"
+      },
+      "meta": {},
+      "spec": {
+        "workspaceName": "sort-iot",
+        "attach": true
+      }
+    }
+  }
+          ```
+   	* Response:
+   		* SUCCESS CODE: 200
+		* BODY_TYPE:  application/json
+		* BODY:   
+			
+
 ## 8 - Run
