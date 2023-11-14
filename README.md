@@ -30,12 +30,12 @@
 
 ## 4 - Run "Get Access Token"  in Login Folder
 
-* Request:
+* REQUEST:
 	* VERB: Post
 	* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
 	* HEADERS:
 		* Content-Type:  application/x-www-form-urlencoded
-* Response:
+* RESPONSE:
 	* SUCCESS CODE: 200
 	* BODY:
 		* "id_token": "eyJhbGciOiJSUz........."
@@ -46,7 +46,7 @@
 
 ## 5 - Run "Get Cluster List"  in Clusters Folder
 
-* Request:
+* REQUEST:
 	* VERB: Get
 	* URL: (below shows different searchScopes to filter)
 		* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=*
@@ -61,23 +61,23 @@
 	* HEADERS(Required):
  		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN>"
 
-   	* Response:
-   		* SUCCESS CODE: 200
-		* BODY_TYPE:  application/json
-		* BODY:   
-			* { "clusters":
-				* [...]
-			* }
+* RESPONSE:
+	* SUCCESS CODE: 200
+	* BODY_TYPE:  application/json
+	* BODY:   
+		* { "clusters":
+			* [...]
+		* }
    	          
 ## 6 - Run "List Cluster Groups"  in Cluster Groups folder
 
-* Request:
+* REQUEST:
 	* VERB: Get
 	* URL: https://{{baseUrl}}/v1alpha1/clustergroups?searchScope.name=*
 	* HEADERS(Required):
 		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
 
-* Response:
+* RESPONSE:
 	* SUCCESS CODE: 200
 	* BODY_TYPE:  application/json
 	* BODY:   
@@ -87,7 +87,7 @@
 
 ## 7 - Run "Attach Existing Namespace"  in Workspaces-Namespaces folder
 
-* Request:
+* REQUEST:
 	* VERB: Post
 	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/namespaces
 	* HEADERS(Required):
@@ -112,7 +112,7 @@
   }
 ```
 
-* Response:
+* RESPONSE:
 	* SUCCESS CODE: 200
 	* BODY_TYPE:  application/json
 	* BODY:   
@@ -120,7 +120,7 @@
 
 ## 8 - Run "Create Cluster"  in Create Cluster folder
 
-* Request:
+* REQUEST:
 	* VERB: Post
 	* URL: https://{{baseUrl}}/v1alpha1/managementclusters/{{managementClusterName}}/provisioners/{{provisionerName}}/tanzukubernetesclusters  
 	* HEADERS(Required):
@@ -222,14 +222,14 @@
 }
 ```
 
-* Response:
+* RESPONSE:
 	* SUCCESS CODE: 200
 	* BODY_TYPE:  application/json
 	* BODY:
 
 ## 9 - (Work in Progress) Run "Get Kubeconfig for Cluster"  in Clusters folder
 * NOTE: Need to provide PEM Cert so the API response can be encrypted for security purposes.
-* Request:
+* REQUEST:
 	* VERB: Get
 	* URL: https://{{baseUrl}}/v1alpha1/clusters/shared-01/adminkubeconfig?fullName.managementClusterName=sc-802-vds&fullName.provisionerName=tanzu-dev01&encryptionKey.PublicKeyPem=LS0tLS1CRUdJTiBSU0EgUFVCT.......tFWS0tLS0tCg==&encryptionKey.timestamp=2023-11-09T20:00:00.0Z
  		* NOTE: Where encryptionKey.PublicKeyPem was created with
@@ -239,7 +239,7 @@
 	* HEADERS(Required):
 		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
   		* "Content-Type":  "application/json"
-* Response:
+* RESPONSE:
 	* SUCCESS CODE: 200
 	* BODY_TYPE:  application/json
 	* BODY:
