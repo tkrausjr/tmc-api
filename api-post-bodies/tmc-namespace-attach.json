@@ -1,0 +1,15 @@
+{
+    "namespace": {
+      "fullName": {
+        "managementClusterName": "sc-802-vds",
+        "provisionerName": "tanzu-dev01",
+        "clusterName": "shared-01",
+        "name": "local-kubectl-test-tmc-3"
+      },
+      "meta": {},
+      "spec": {
+        "workspaceName": "sort-iot",
+        "attach": true
+      }
+    }
+  }
