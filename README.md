@@ -21,8 +21,29 @@
 	- [ ] Select the Last Tab called "API Tokens" --> Generate TOKEN --> Copy the token generaged.
 
 
-## 3 - Run the Validation
-## 4 - Run
+## 3 - Configure Postman Variables
+- [ ] baseUrl = <orgname>.tmc.cloud.vmware.com (Obtained from URL field when you loginto TMC)
+- [ ] refreshToken = API Token generated above
+- [ ] provisionerName = vSphere Namespace Name 
+- [ ] managementClusterName = Name of SC Management Cluster you added in TMC --> Administration
+      
+
+## 4 - Run "Get Access Token" POST in Login Folder
+- [ ] API Reference
+	- [ ] Request
+ 		- [ ] VERB: POST
+		- [ ] URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
+       		- [ ] Headers:
+			- [ ] Content-Type:  application/x-www-form-urlencoded
+   	- [ ] Response
+      	 	- [ ] Success Code: 200		
+     		- [ ] Body:
+			- [ ]  "id_token": "eyJhbGciOiJSUz........."  
+			- [ ] NOTE: This is the Bearer Token needed for all subsequent REST calls.
+
+
+
+
 ## 5 - Run
 ## 6 - Run
 ## 7 - Run
