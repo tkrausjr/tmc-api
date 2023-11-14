@@ -9,16 +9,16 @@
 
 
 ## 2 - Setup Postman and obtain API Token 
-- [ ] Download & Install Latest version of Postman
-- [ ] Download the updated Postman TMC Collection from postman folder in this REPO.
-	- [ ] https://raw.githubusercontent.com/tkrausjr/tmc-api/main/postman/TMC-API-Updated-TK.postman_collection.json
-- [ ] Import the Collection into Postman
-- [ ] Login to your Account in VMware Cloud Services
-	- [ ] https://console.cloud.vmware.com/csp/gateway/portal/#/user/profile
-- [ ] Gererate an API Token
-	- [ ] Login to your ORG
-	- [ ] In Top Right of TMC or Cloud Console, Click your UserName --> Goto "USER SETTINGS" --> My Account
-	- [ ] Select the Last Tab called "API Tokens" --> Generate TOKEN --> Copy the token generaged.
+* Download & Install Latest version of Postman
+* Download the updated Postman TMC Collection from postman folder in this REPO.
+	* https://raw.githubusercontent.com/tkrausjr/tmc-api/main/postman/TMC-API-Updated-TK.postman_collection.json
+* Import the Collection into Postman
+* Login to your Account in VMware Cloud Services
+	* https://console.cloud.vmware.com/csp/gateway/portal/#/user/profile
+* Gererate an API Token
+	* Login to your ORG
+	* In Top Right of TMC or Cloud Console, Click your UserName --> Goto "USER SETTINGS" --> My Account
+	* Select the Last Tab called "API Tokens" --> Generate TOKEN --> Copy the token generaged.
 
 
 ## 3 - Configure Postman Variables
