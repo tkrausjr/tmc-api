@@ -97,7 +97,7 @@
 				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
       		* BODY:
 ``` javascript
-          {
+{
     "namespace": {
       "fullName": {
         "managementClusterName": "sc-802-vds",
@@ -113,10 +113,11 @@
     }
   }
 ```
-   	* Response:
-   		* SUCCESS CODE: 200
-		* BODY_TYPE:  application/json
-		* BODY:   
+
+   * Response:
+	* SUCCESS CODE: 200
+	* BODY_TYPE:  application/json
+	* BODY:   
 			
 
 ## 8 - Run
