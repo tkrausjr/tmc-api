@@ -96,7 +96,7 @@
     			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
 				* NOTE: from "Get Access Token -- In Login Folder" Response Body.
       		* BODY:
-``` javascript
+```javascript
 {
     "namespace": {
       "fullName": {
@@ -114,10 +114,10 @@
   }
 ```
 
-   * Response:
-	* SUCCESS CODE: 200
-	* BODY_TYPE:  application/json
-	* BODY:   
+   	* Response:
+		* SUCCESS CODE: 200
+		* BODY_TYPE:  application/json
+		* BODY:   
 			
 
 ## 8 - Run
