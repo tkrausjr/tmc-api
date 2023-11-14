@@ -38,8 +38,8 @@
    	* Response
    		* Success Code: 200
    	    	* Body:
-			*  "id_token": "eyJhbGciOiJSUz........."  
-			* NOTE: This is the Bearer Token needed for all subsequent REST calls.
+   	     		* "id_token": "eyJhbGciOiJSUz........."
+   	      		* NOTE: This is the Bearer Token needed for all subsequent REST calls.
 
 
 
