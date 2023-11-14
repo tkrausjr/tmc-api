@@ -46,20 +46,20 @@
 
 ## 5 - Run "Get Cluster List"  in Clusters Folder
 * API Reference
-	* Request:
- 		* VERB: Get
-		* URL: (below shows different searchScopes to filter)
-  			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=*
-				* Returns all clusters in the ORG you have permissions for.  
-			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=<cluster-name>
-				* Returns just clusters that match that name
-			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.provisionerName=spvn
-				* Returns just clusters that are part of the specified provisioner (TKGs Namespace)
-			* https://{{baseUrl}}/v1alpha1/clusters?searchScope.managementClusterName=tpmlab-host66-sc
-				* Returns all Clusters under a given Management Cluster.
-    
-  		* HEADERS(Required):
-    		1- "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN>"
+* Request:
+	* VERB: Get
+	* URL: (below shows different searchScopes to filter)
+		* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=*
+			* Returns all clusters in the ORG you have permissions for.  
+		* https://{{baseUrl}}/v1alpha1/clusters?searchScope.name=<cluster-name>
+			* Returns just clusters that match that name
+		* https://{{baseUrl}}/v1alpha1/clusters?searchScope.provisionerName=spvn
+			* Returns just clusters that are part of the specified provisioner (TKGs Namespace)
+		* https://{{baseUrl}}/v1alpha1/clusters?searchScope.managementClusterName=tpmlab-host66-sc
+			* Returns all Clusters under a given Management Cluster.
+
+	* HEADERS(Required):
+ 		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN>"
 
    	* Response:
    		* SUCCESS CODE: 200
@@ -70,20 +70,20 @@
 			* }
    	          
 ## 6 - Run "List Cluster Groups"  in Cluster Groups folder
-* API Reference
-	* Request:
- 		* VERB: Get
-		* URL: https://{{baseUrl}}/v1alpha1/clustergroups?searchScope.name=*
-  		* HEADERS(Required):
-    			* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
 
-   	* Response:
-   		* SUCCESS CODE: 200
-		* BODY_TYPE:  application/json
-		* BODY:   
-			* { "clusterGroups":
-				* [...]
-			* }
+* Request:
+	* VERB: Get
+	* URL: https://{{baseUrl}}/v1alpha1/clustergroups?searchScope.name=*
+	* HEADERS(Required):
+		* "Authorization" : "Bearer <INSERT_VALUE_FROM_id_token_RETURNED_FROM_LOGIN"
+
+* Response:
+	* SUCCESS CODE: 200
+	* BODY_TYPE:  application/json
+	* BODY:   
+		* { "clusterGroups":
+			* [...]
+		* }
 
 ## 7 - Run "Attach Existing Namespace"  in Workspaces-Namespaces folder
 * API Reference
