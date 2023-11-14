@@ -29,17 +29,17 @@
       
 
 ## 4 - Run "Get Access Token"  in Login Folder
-* API Reference
-	* Request:
- 		* VERB: Post
-		* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
-  		* HEADERS:
-    		  * Content-Type:  application/x-www-form-urlencoded
-   	* Response:
-   		* SUCCESS CODE: 200
-   	    	* BODY:
-   	     		* "id_token": "eyJhbGciOiJSUz........."
-   	      		* NOTE: This is the Bearer Token needed for all subsequent REST calls.
+
+* Request:
+	* VERB: Post
+	* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
+	* HEADERS:
+		* Content-Type:  application/x-www-form-urlencoded
+* Response:
+	* SUCCESS CODE: 200
+	* BODY:
+		* "id_token": "eyJhbGciOiJSUz........."
+		* NOTE: This is the Bearer Token needed for all subsequent REST calls.
 
 
 
