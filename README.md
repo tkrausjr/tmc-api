@@ -34,7 +34,7 @@
  		* VERB: Post
 		* URL: https://console.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize?refresh_token={{refreshToken}}
   		* HEADERS:
-    			* - Content-Type:  application/x-www-form-urlencoded
+    		  * Content-Type:  application/x-www-form-urlencoded
    	* Response:
    		* SUCCESS CODE: 200
    	    	* BODY:
