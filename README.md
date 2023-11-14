@@ -36,8 +36,8 @@
        		* Headers:
 			* Content-Type:  application/x-www-form-urlencoded
    	* Response
-      	 	* Success Code: 200		
-     		* Body:
+   		* Success Code: 200
+   	    	* Body:
 			*  "id_token": "eyJhbGciOiJSUz........."  
 			* NOTE: This is the Bearer Token needed for all subsequent REST calls.
 
