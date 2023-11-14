@@ -16,9 +16,9 @@
 - [ ] Login to your Account in VMware Cloud Services
 	- [ ] https://console.cloud.vmware.com/csp/gateway/portal/#/user/profile
 - [ ] Gererate an API Token
--- [ ] Login to your ORG
--- [ ] In Top Right of TMC or Cloud Console, Click your UserName --> Goto "USER SETTINGS" --> My Account
--- [ ] Select the Last Tab called "API Tokens" --> Generate TOKEN --> Copy the token generaged.
+	- [ ] Login to your ORG
+	- [ ] In Top Right of TMC or Cloud Console, Click your UserName --> Goto "USER SETTINGS" --> My Account
+	- [ ] Select the Last Tab called "API Tokens" --> Generate TOKEN --> Copy the token generaged.
 
 
 ## 3 - Run the Validation
